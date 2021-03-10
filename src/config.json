@@ -1,0 +1,27 @@
+{
+    "msal": {
+      "auth": {
+        "clientId": "6226576d-37e9-49eb-b201-ec1eeb0029b6",
+        "authority": "https://login.microsoftonline.com/common/",
+        "redirectUri": "/",
+        "postLogoutRedirectUri": "/"
+      },
+      "cache": {
+        "cacheLocation": "localStorage",
+        "storeAuthStateInCookie": true
+      }
+    },
+    "guard": {
+      "interactionType": "redirect",
+      "authRequest": {
+        "scopes": ["user.read"]
+      },
+      "loginFailedRoute": "/login-failed" 
+    },
+    "interceptor": {
+      "interactionType": "redirect",
+      "protectedResourceMap": [
+        ["https://graph.microsoft.com/v1.0/me", ["user.read"]]
+      ]
+    }
+  }
